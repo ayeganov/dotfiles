@@ -192,3 +192,4 @@ git config --global merge.tool vimdiff
 git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
 . /home/aleks/.pyenv/versions/anaconda3-5.1.0/etc/profile.d/conda.sh
+alias config='/usr/bin/git --git-dir=/home/aleks/.cfg/ --work-tree=/home/aleks'
