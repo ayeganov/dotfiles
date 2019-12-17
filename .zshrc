@@ -183,7 +183,6 @@ fi
 # Work related aliases
 alias dsb="docker start beyond_dev"
 alias dss="docker stop beyond_dev"
-eval $(thefuck --alias)
 
 #fpath=(~/.zshr/completion $fpath)
 
@@ -191,5 +190,4 @@ eval $(thefuck --alias)
 git config --global merge.tool vimdiff
 git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
-. /home/aleks/.pyenv/versions/anaconda3-5.1.0/etc/profile.d/conda.sh
-alias config='/usr/bin/git --git-dir=/home/aleks/.cfg/ --work-tree=/home/aleks'
+alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
