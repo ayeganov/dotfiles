@@ -98,7 +98,7 @@ export KEYTIMEOUT=1
 # export LANG=en_US.UTF-8
 
 export EDITOR='vim'
-CDPATH=".:~:~/code"
+CDPATH=".:${HOME}:${HOME}/code"
 
 function sources
 {
