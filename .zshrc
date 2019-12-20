@@ -69,7 +69,7 @@ plugins=(git svn zsh-syntax-highlighting git-flow)
 
 # User configuration
 
-export PATH="/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:$HOME/node_modules/.bin:/usr/bin"
+export PATH="/usr/local/bin:/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:$HOME/node_modules/.bin:/usr/bin:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,7 +102,7 @@ CDPATH=".:${HOME}:${HOME}/code"
 
 function sources
 {
-    find . -name "*.cpp" -o -name "*.cc" -o -name "*.py" -o -name "*.hpp" -o -name "*.c" -o -name "*.h" -o -name "*.html" -o -name "*.js" -o -name "*.css"
+    find . -name "*.cpp" -o -name "*.cc" -o -name "*.py" -o -name "*.hpp" -o -name "*.c" -o -name "*.h" -o -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.jsx"
 }
 
 function agc

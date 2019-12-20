@@ -31,7 +31,7 @@ set shiftwidth=4
 
 " Powerline config options
 set nocompatible
-" set encoding=utf-8   "vim only
+set encoding=utf-8   "vim only
 
 
 " Special character display
