@@ -69,7 +69,7 @@ plugins=(git svn zsh-syntax-highlighting git-flow)
 
 # User configuration
 
-export PATH="/usr/local/bin:/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:$HOME/node_modules/.bin:/usr/bin:/usr/local/go/bin"
+export PATH="/usr/local/bin:/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:/snap/bin:$HOME/node_modules/.bin:/usr/bin:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -152,6 +152,7 @@ unsetopt auto_cd
 alias cp="rsync -ah --progress"
 alias gbdiff="git log --left-right --graph --cherry-pick --oneline "
 alias dn="daemon"
+alias confind="conan search -r all"
 
 # Haskell stuff
 export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
@@ -191,4 +192,8 @@ git config --global merge.tool vimdiff
 git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
 alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
+
+xset +fp /home/ainindza/.local/share/fonts
+xset fp rehash
+
 neofetch

@@ -27,7 +27,7 @@ set smartcase
 set ignorecase
 set autoread
 set autoindent
-set shiftwidth=4
+set shiftwidth=2
 
 " Powerline config options
 set nocompatible
@@ -50,7 +50,10 @@ set encoding=utf-8   "vim only
 :nmap <Leader>t :Tags<CR>
 :nmap <Leader>y :YcmCompleter GetType<CR>
 :nmap <Leader>b :Buffers<CR>
-:xnoremap \a "+y<CR>
+":xnoremap \a "+y<CR>
+:xnoremap <Leader>a :w! /tmp/copy<CR>
+:nmap <Leader>A :r /tmp/copy<CR>
+
 
 " Whitespace highlighting
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen ctermfg=black guifg=black
@@ -61,7 +64,7 @@ highlight AllTabs ctermbg=darkred guibg=darkred
 
 filetype on
 
-set tabstop=4
+set tabstop=2
 set hlsearch
 set expandtab
 set backspace=indent,start
@@ -80,7 +83,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
@@ -94,14 +97,18 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'mileszs/ack.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'adrienverge/yamllint'
-Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'CharlesGueunet/VimFilify'
 call plug#end()
 
-" Ctrl-P config
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_user_command =
-"      \ ['.git', "cd %s && git ls-files . -co --exclude-standard && git submodule foreach -q \"git ls-files | sed 's|^|$path/|g'\""]
+
+augroup vimmic_c_ale_config
+  autocmd FileType c let g:custom_c_options = Filify#process('.ale_config', {'default_return':'-std=c17 -Wall'})
+  autocmd FileType c let g:ale_c_clang_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_gcc_options = g:custom_c_options
+augroup END
+
 
 " Airline config
 let g:airline_powerline_fonts = 1
@@ -126,6 +133,7 @@ let g:jedi#completions_enabled = 0
 
 " YCM extra conf
 "let g:ycm_global_ycm_extra_conf = "~/code/.ycm_extra_conf.py""
+let g:ycm_use_clangd=0
 "
 "
 "========================================

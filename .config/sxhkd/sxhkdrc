@@ -20,6 +20,27 @@ super + Home
 super + End
     xscreensaver-command -lock
 
+super + n
+    nautilus
+
+F1
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Sharing Keyboard") && ${HOME}/bin/kbshare
+
+shift + F1
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Turning Off Keyboard Share") && ${HOME}/bin/kbnoshare
+
+F2
+    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Getting Code") && ${HOME}/bin/getcode
+
+shift + F2
+    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Dropping Code") && ${HOME}/bin/dropcode
+
+F3
+    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Setting Up Shared Dir") && ${HOME}/bin/setshared
+
+shift + F3
+    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Unmounting Shared Dir") && ${HOME}/bin/unmountshared
+
 #
 # bspwm hotkeys
 #
@@ -89,6 +110,32 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+# hide window
+super + v
+  bspc node -g hidden
+
+
+# unhide window
+super + shift + v
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+
+
+# rotate the desktop
+super + r
+    bspc node @/ -R 90
+
+# rotate selected nodes
+super + shift + r
+    bspc node -R 90
+
+#
+# select nodes
+#
+super + y
+    bspc node -f @parent
+
 
 #
 # preselect

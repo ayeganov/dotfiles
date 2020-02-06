@@ -6,7 +6,7 @@ battery_print() {
 
     ac=0
     battery_level=0
-    battery_max=0
+    battery_max=1
 
     if [ -f "$path_ac/online" ]; then
         ac=$(cat "$path_ac/online")
