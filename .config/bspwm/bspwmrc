@@ -2,7 +2,7 @@
 
 daemon sxhkd
 daemon xscreensaver
-#rescuetime&
+rescuetime&
 
 #bspc monitor HDMI-0 I II III IV
 bspc monitor DP-2 I II III IV

@@ -5,7 +5,7 @@ feh
 fzf
 git
 htop
-ifconfig
+net-tools
 neofetch
 silversearcher-ag
 tig
@@ -14,3 +14,4 @@ wget
 xscreensaver
 zenity
 zsh
+sshpass

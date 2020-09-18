@@ -46,9 +46,14 @@ set encoding=utf-8   "vim only
 " Show/hide special characters(tabs, newlines, spaces etc)
 :nmap \c :set list!<CR>
 " Turn all buffers into tabs
-:nmap \r :tab sball<CR>
+:nmap <Leader>r :tab sball<CR>
 :nmap <Leader>t :Tags<CR>
+:nmap <Leader>f :YcmCompleter FixIt<CR>
 :nmap <Leader>y :YcmCompleter GetType<CR>
+:nmap <Leader>h :YcmCompleter GetDoc<CR>
+:nmap <Leader>p :YcmCompleter GetParent<CR>
+:nmap <Leader>d :YcmCompleter GoToDefinition<CR>
+:nmap <Leader>D :YcmCompleter GoToDeclaration<CR>
 :nmap <Leader>b :Buffers<CR>
 ":xnoremap \a "+y<CR>
 :xnoremap <Leader>a :w! /tmp/copy<CR>
@@ -69,7 +74,7 @@ set hlsearch
 set expandtab
 set backspace=indent,start
 
-autocmd FileType make set noexpandtab
+autocmd FileType make set noexpandtab tabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType jsx setlocal tabstop=2 shiftwidth=2
@@ -91,15 +96,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'mileszs/ack.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'adrienverge/yamllint'
-"Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim', { 'for': 'python' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'CharlesGueunet/VimFilify'
+Plug 'lyuts/vim-rtags'
+Plug 'craigemery/vim-autotag'
+"Plug 'vim-python/python-syntax'
 call plug#end()
 
 

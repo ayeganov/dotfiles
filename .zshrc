@@ -65,11 +65,11 @@ ZSH_THEME="aleks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn zsh-syntax-highlighting git-flow)
+plugins=(git svn zsh-syntax-highlighting git-flow) # zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/usr/local/bin:/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:/snap/bin:$HOME/node_modules/.bin:/usr/bin:/usr/local/go/bin"
+export PATH="/usr/local/bin:/home/${USER}/.pyenv/bin:/usr/lib/ccache:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin:/snap/bin:$HOME/node_modules/.bin:/usr/bin:/usr/local/go/bin:/$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,7 +102,7 @@ CDPATH=".:${HOME}:${HOME}/code"
 
 function sources
 {
-    find . -name "*.cpp" -o -name "*.cc" -o -name "*.py" -o -name "*.hpp" -o -name "*.c" -o -name "*.h" -o -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.jsx"
+    find . -name "*.cpp" -o -name "*.cc" -o -name "*.py" -o -name "*.hpp" -o -name "*.c" -o -name "*.h" -o -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.jsx" -o -name "*.java"
 }
 
 function agc
@@ -121,6 +121,11 @@ function di
 function virtenv
 {
     source ${1}/bin/activate 2> /dev/null || echo "No virtual environment available."
+}
+
+function cd
+{
+  builtin cd "$@" && ls
 }
 
 

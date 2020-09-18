@@ -30,16 +30,16 @@ shift + F1
     sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Turning Off Keyboard Share") && ${HOME}/bin/kbnoshare
 
 F2
-    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Getting Code") && ${HOME}/bin/getcode
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Getting Code") && ${HOME}/bin/getcode
 
 shift + F2
-    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Dropping Code") && ${HOME}/bin/dropcode
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Dropping Code") && ${HOME}/bin/dropcode
 
 F3
-    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Setting Up Shared Dir") && ${HOME}/bin/setshared
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Setting Up Shared Dir") && ${HOME}/bin/setshared
 
 shift + F3
-    sleep 1.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Unmounting Shared Dir") && ${HOME}/bin/unmountshared
+    sleep 0.5|tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Unmounting Shared Dir") && ${HOME}/bin/unmountshared
 
 #
 # bspwm hotkeys
