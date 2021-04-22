@@ -127,7 +127,7 @@ function di
 
 function virtenv
 {
-    source ${1}/bin/activate 2> /dev/null || echo "No virtual environment available."
+# source ${1}/bin/activate 2> /dev/null || echo "No virtual environment available."  # commented out by conda initialize
 }
 
 function cd
@@ -170,11 +170,6 @@ alias dft="git difftool"
 # Haskell stuff
 export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(direnv hook zsh)"
-
 # Change default format of built-in time
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
@@ -209,7 +204,33 @@ alias config="/usr/bin/git --git-dir=${HOME}/.cfg/ --work-tree=${HOME}"
 xset +fp /home/ainindza/.local/share/fonts
 xset fp rehash
 
-neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+neofetch
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/jdk-11-openjdk-amd64"
+eval "$(pyenv init -)"
+eval "$(direnv hook zsh)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/ainindza/.pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/ainindza/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
+#        . "/home/ainindza/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/ainindza/.pyenv/versions/miniconda3-latest/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ainindza/.sdkman"
+[[ -s "/home/ainindza/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ainindza/.sdkman/bin/sdkman-init.sh"

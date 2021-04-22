@@ -10,6 +10,8 @@ augroup filetype
   au BufNewFile,BufRead *.ino setfiletype cpp
   au BufNewFile,BufRead *.jinja2 setfiletype html
   au BufNewFile,BufRead *.jsx setfiletype javascript
+  au BufNewFile,BufRead *.tsx setfiletype typescript
+  au BufNewFile,BufRead *.kt setfiletype kotlin
 augroup end
 set ruler
 " Name of the file that I am editing
@@ -55,9 +57,9 @@ set encoding=utf-8   "vim only
 :nmap <Leader>d :YcmCompleter GoToDefinition<CR>
 :nmap <Leader>D :YcmCompleter GoToDeclaration<CR>
 :nmap <Leader>b :Buffers<CR>
-":xnoremap \a "+y<CR>
-:xnoremap <Leader>a :w! /tmp/copy<CR>
-:nmap <Leader>A :r /tmp/copy<CR>
+:xnoremap \a "+y<CR>
+":xnoremap <Leader>a :w! /tmp/copy<CR>
+":nmap <Leader>A :r /tmp/copy<CR>
 
 
 " Whitespace highlighting
@@ -81,6 +83,7 @@ autocmd FileType jsx setlocal tabstop=2 shiftwidth=2
 autocmd FileType html setlocal tabstop=2 shiftwidth=2
 autocmd FileType json setlocal tabstop=2 shiftwidth=2
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+autocmd BufReadPost *.kt setlocal filetype=kotlin tabstop=2 shiftwidth=2
 
 
 "################ PLUGINS #########################
@@ -107,6 +110,8 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'CharlesGueunet/VimFilify'
 Plug 'lyuts/vim-rtags'
 Plug 'craigemery/vim-autotag'
+Plug 'udalov/kotlin-vim'
+Plug 'hdiniz/vim-gradle'
 "Plug 'vim-python/python-syntax'
 call plug#end()
 
@@ -178,3 +183,5 @@ map <Leader>3 :diffget REMOTE<CR>
 if has("patch-8.1.0360")
     set diffopt+=internal,algorithm:patience
 endif
+
+source /home/ainindza/ycm_lang_configs/vimrc.generated
