@@ -9,9 +9,9 @@ net-tools
 neofetch
 silversearcher-ag
 tig
-vim
 wget
 xscreensaver
 zenity
 zsh
 sshpass
+compton
